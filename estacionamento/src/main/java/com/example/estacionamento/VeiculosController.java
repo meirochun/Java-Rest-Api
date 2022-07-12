@@ -30,17 +30,17 @@ public class VeiculosController {
 		return repository.findById(id).get();
 	}
 	
-	@PostMapping("/veiculos")
+	@PostMapping("/veiculos/post")
 	public Veiculos saveVeiculo(@RequestBody Veiculos veiculo) {
 		return repository.save(veiculo);
 	}
 	
-	@PutMapping("/veiculos/{id}")
+	@PutMapping("/veiculos/update/{id}")
 	public Veiculos updateVeiculo(@RequestBody Veiculos veiculo) {
 		return repository.save(veiculo);
 	}
 	
-	@DeleteMapping("/veiculos/{id}")
+	@DeleteMapping("/veiculos/delete/{id}")
 	public void deleteVeiculo(@PathVariable Long id) {
 		repository.deleteById(id);
 	}
