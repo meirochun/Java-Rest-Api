@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.http.ResponseEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -61,7 +63,15 @@ public class Veiculos {
 	}
 
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		String err = "Endereço inexistente!";
+
+		Vagas vaga = new Vagas();
+		if (vaga.endereco != ""){
+			endereco = vaga.getEndereco();
+			vaga.setVago(false);
+			vaga.setPlacaVeiculoAlocado(placa);
+		}
+		this.endereco = err;
 	}
 	
 	public Integer getAno() {

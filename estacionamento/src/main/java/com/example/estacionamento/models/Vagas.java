@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vagas {
+    
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
@@ -44,14 +45,16 @@ public class Vagas {
     }
 
     public String getPlacaVeiculoAlocado() {
-        Veiculos vehicles = new Veiculos();
-        if (vehicles.endereco != null) {
-            vehicles.getPlaca();
-        }
         return placaVeiculoAlocado;
     }
-    public void setPlacaCarroAlocado(String placaVeiculoAlocado) {
-        this.placaVeiculoAlocado = placaVeiculoAlocado;
+    public void setPlacaVeiculoAlocado(String placaVeiculoAlocado, Veiculos placa) {
+        String err = "Não há veículos ainda.";
+
+        Veiculos vehicle = new Veiculos();
+        if (vehicle.endereco == this.endereco) {
+            placaVeiculoAlocado = placa.getPlaca();
+        }
+        this.placaVeiculoAlocado = err;
     }
 
     public Boolean getVago() {
