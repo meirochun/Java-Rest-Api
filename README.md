@@ -14,5 +14,4 @@ Segue abaixo o link para baixar a IDE do Eclipse e também para baixar as extens
 > [Postman](https://www.postman.com/downloads/)<br>
 
 Após ter baixado tudo o que tem acima. Inicie o projeto como Spring Boot Application pelo Boot Dashboard. <br>
-Em seguida abra o Postman e **IMPORTE** os 2 aquivos .json dentro do arquivo .rar que tem no código fonte. <br>
-A partir daí você poderá fazer os testes que quiser na API.
+Em seguida abra o Postman para fazer as requisições.
